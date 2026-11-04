@@ -1,0 +1,50 @@
+#
+# This source file is part of the Multilingual QA Workbench open-source project
+#
+# SPDX-FileCopyrightText: 2026 Stanford University and the project authors (see CONTRIBUTORS.md)
+#
+# SPDX-License-Identifier: MIT
+#
+
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "multilingual-qa-workbench"
+version = "0.1.0"
+description = "A configurable workbench for multilingual question-answering evaluations"
+readme = "README.md"
+requires-python = ">=3.14"
+license = "MIT"
+dependencies = [
+    "ipykernel==7.4.0",
+    "jupyterlab==4.6.5",
+    "matplotlib==3.11.2",
+    "openpyxl==3.1.5",
+    "pandas==3.1.1",
+    "pyarrow==26.0.1",
+    "python-dotenv==1.2.4",
+    "requests==2.34.2",
+]
+
+[project.scripts]
+qa-workbench = "qa_workbench.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py314"
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+
+[tool.coverage.run]
+branch = true
+source = ["src", "scripts"]
+
+[tool.coverage.report]
+show_missing = true
+skip_empty = true

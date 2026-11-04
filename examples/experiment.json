@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "name": "Example multilingual evaluation",
+  "questions": [
+    {
+      "question_id": "example_1",
+      "question_text": "Replace this placeholder with an evaluation question.",
+      "source_language_code": "en",
+      "source_language_name": "English",
+      "reference_answer": ""
+    }
+  ],
+  "languages": [
+    {
+      "language_code": "en",
+      "language_name": "English"
+    },
+    {
+      "language_code": "es",
+      "language_name": "Spanish"
+    }
+  ],
+  "models": {
+    "openai": {
+      "name": "GPT-6 Astra Pro",
+      "model_id": "openai/gpt-6-astra-pro",
+      "temperature": null,
+      "timeout_seconds": 900,
+      "concurrency": 2
+    },
+    "anthropic": {
+      "name": "Claude Opus 5.5",
+      "model_id": "anthropic/claude-opus-5.5",
+      "temperature": null,
+      "max_retries": 1,
+      "concurrency": 2
+    }
+  },
+  "translation": {
+    "model": {
+      "name": "GPT-6 Astra Pro",
+      "model_id": "openai/gpt-6-astra-pro",
+      "temperature": null,
+      "timeout_seconds": 900,
+      "concurrency": 2
+    },
+    "system_prompt": "Translate the question naturally into the target language. Preserve its meaning and ambiguity. Return only the translation."
+  },
+  "answers": {
+    "system_prompt": null,
+    "repeats_per_prompt": 1
+  },
+  "reviews": {
+    "reviewers": [
+      {
+        "field_key": "relevance",
+        "field_label": "Relevance to the question",
+        "options": "Low | Medium | High"
+      },
+      {
+        "field_key": "clarity",
+        "field_label": "Clarity",
+        "options": "Low | Medium | High"
+      }
+    ]
+  },
+  "pending_revisions": [],
+  "rerun": {
+    "source_dir": "inputs/approved-responses",
+    "review_group": "reviewers",
+    "candidate_models": {
+      "Example previous candidate": "openai"
+    },
+    "source_provider_aliases": {},
+    "reference_answers": "empty"
+  },
+  "budget": {
+    "activity_file": null,
+    "activity_model_aliases": {},
+    "safety_multiplier": 1.5,
+    "round_up_usd": 10
+  },
+  "plots": [
+    {
+      "review_group": "reviewers",
+      "field_key": "relevance",
+      "option": "High",
+      "title": "High relevance"
+    }
+  ]
+}

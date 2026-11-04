@@ -1,0 +1,11 @@
+#
+# This source file is part of the Multilingual QA Workbench open-source project
+#
+# SPDX-FileCopyrightText: 2026 Stanford University and the project authors (see CONTRIBUTORS.md)
+# SPDX-License-Identifier: MIT
+
+-r requirements.txt
+coverage==7.17.1
+nbformat==5.11.1
+reuse==6.3.0
+ruff==0.17.3
