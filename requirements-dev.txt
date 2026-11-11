@@ -5,7 +5,7 @@
 # SPDX-License-Identifier: MIT
 
 -r requirements.txt
-coverage==7.17.1
+coverage==7.17.2
 nbformat==5.11.1
 reuse==6.3.0
-ruff==0.17.3
+ruff==0.17.4
